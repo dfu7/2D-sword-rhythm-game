@@ -14,6 +14,10 @@ public class Tentacle : MonoBehaviour
     public float smoothSpeed;
     public float trailSpeed;
 
+    public float wiggleSpeed;
+    public float wiggleMagnitude;
+    public Transform wiggleDir;
+
     // Update is called once per frame
     void Start()
     {
@@ -24,6 +28,8 @@ public class Tentacle : MonoBehaviour
 
     private void Update()
     {
+        wiggleDir.localRotation = Quaternion.Euler(0, 0, Mathf.Sin(Time.time * wiggleSpeed) * wiggleMagnitude);
+
         segmentPoses[0] = targetDir.position;
 
         for (int i = 1; i < segmentPoses.Length; i++)
