@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5880473086251879495}
   - component: {fileID: 3985623821233734477}
   - component: {fileID: 430859439718383833}
+  - component: {fileID: 882111906753673892}
+  - component: {fileID: 2577396156254756838}
   m_Layer: 0
   m_Name: basic test minion
   m_TagString: Untagged
@@ -99,3 +101,41 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.004801
+--- !u!114 &882111906753673892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722454821290222129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca072532fc35b1488ee01028424532a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  targetPosition: {x: 0, y: 0, z: 0}
+  canMove: 0
+  timeToReachTarget: 3
+  ring: 
+--- !u!50 &2577396156254756838
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722454821290222129}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

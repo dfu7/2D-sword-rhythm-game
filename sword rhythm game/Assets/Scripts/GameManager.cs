@@ -20,20 +20,36 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public string monsterState;
-    public bool hit = false;
+    public string monsterLocation;
+    public bool monsterHit = false;
     public int score = 0;
     public float scoreMultiplier = 1;
 
+    public bool activeMonster = false;
+
     private void Update()
     {
-        Manage
+        ManageMonsterSpawn();
+        ManageHits();
         ManageScore();
+    }
+
+    private void ManageMonsterSpawn()
+    {
+        if (activeMonster)
+        {
+            
+        }
+    }
+
+    private void ManageHits()
+    {
+
     }
 
     private void ManageScore()
     {
-        score 
+
     }
 
 }
