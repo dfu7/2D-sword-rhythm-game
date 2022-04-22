@@ -27,6 +27,14 @@ public class MonsterSpawner : MonoBehaviour
             activeMonster.timeToReachTarget = timeToTarget;
         }
 
+        if (activeMonster.ring == "perf" && Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Hit");
+            Destroy(activeMonster.gameObject);
+            activeMonster = null;
+            monsterActive = false;
+        }
+
         if (activeMonster.ring == "miss")
         {
             Destroy(activeMonster.gameObject);
