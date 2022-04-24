@@ -8,6 +8,7 @@ public class MonsterSpawner : MonoBehaviour
     [SerializeField] GameObject monster;
     [SerializeField] float spawnMin;
     [SerializeField] float spawnMax;
+    [SerializeField] List<Transform> spawnpoints;
     [SerializeField] float spawnY;
     [SerializeField] GameObject target;
     public float timeToTarget = 3;
@@ -21,7 +22,8 @@ public class MonsterSpawner : MonoBehaviour
         if (!monsterActive)
         {
             monsterActive = true;
-            activeMonster = Instantiate(monster, new Vector3(Random.Range(spawnMin, spawnMax), spawnY, 0), Quaternion.identity).GetComponent<Monster>();
+
+            activeMonster = Instantiate(monster, spawnpoints[Random.Range(0, 3)].position, Quaternion.identity).GetComponent<Monster>();
             activeMonster.canMove = true;
             activeMonster.targetPosition = target.transform.position;
             activeMonster.timeToReachTarget = timeToTarget;
@@ -31,14 +33,14 @@ public class MonsterSpawner : MonoBehaviour
         {
             Debug.Log("Hit");
             Destroy(activeMonster.gameObject);
-            activeMonster = null;
+            //activeMonster = null;
             monsterActive = false;
         }
 
         if (activeMonster.ring == "miss")
         {
             Destroy(activeMonster.gameObject);
-            activeMonster = null;
+            //activeMonster = null;
             monsterActive = false;
         }
     }
