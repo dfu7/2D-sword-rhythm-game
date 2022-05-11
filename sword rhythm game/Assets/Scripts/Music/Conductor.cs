@@ -4,24 +4,27 @@ using UnityEngine;
 
 public class Conductor : MonoBehaviour
 {
-    //Song beats per minute
-    //This is determined by the song you're trying to sync up to
+    #region music vars
+    // music
     public float songBpm;
-
-    //The number of seconds for each song beat
     public float secPerBeat;
-
-    //Current song position, in seconds
     public float songPosition;
-
-    //Current song position, in beats
     public float songPositionInBeats;
-
-    //How many seconds have passed since the song started
     public float dspSongTime;
-
-    //an AudioSource attached to this GameObject that will play the music.
+    public int beatsShownInAdvance = 3;
     public AudioSource musicSource;
+    int nextIndex = 0;
+    #endregion
+
+    [System.Serializable]
+    private class SpawnPackage
+    {
+        public float spawnBeat;
+        public int spawnpointIndex;
+        public int monsterIndex;
+    }
+
+    [SerializeField] private List<SpawnPackage> spawns;
 
     void Start()
     {
@@ -38,12 +41,47 @@ public class Conductor : MonoBehaviour
         musicSource.Play();
     }
 
+    #region monster vars
+    // monster
+    [SerializeField] List<Monster> monsters;
+    [SerializeField] List<Transform> spawnpoints;
+    [SerializeField] public GameObject target;
+    List<Monster> activeMonsters;
+    #endregion
+
     void Update()
     {
+        #region music
         //determine how many seconds since the song started
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
 
         //determine how many beats since the song started
         songPositionInBeats = songPosition / secPerBeat;
+        #endregion
+
+        if (nextIndex < spawns.Count && spawns[nextIndex].spawnBeat < songPositionInBeats + beatsShownInAdvance)
+        {
+            activeMonsters.Add(Instantiate(monsters[spawns[nextIndex].monsterIndex],
+                                        spawnpoints[spawns[nextIndex].spawnpointIndex].position,
+                                        Quaternion.identity).GetComponent<Monster>());
+            activeMonsters[activeMonsters.Count-1].targetPosition = target.transform.position;
+
+            //initialize the fields of the music note
+
+            nextIndex++;
+        }
+
+        #region controls
+        if (activeMonsters[0].ring == "perf" && Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Hit");
+            activeMonsters.RemoveAt(0);
+        }
+
+        if (activeMonsters[0].ring == "miss")
+        {
+            activeMonsters.RemoveAt(0);
+        }
+        #endregion
     }
 }
