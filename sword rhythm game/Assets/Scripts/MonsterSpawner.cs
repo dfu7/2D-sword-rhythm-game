@@ -43,10 +43,8 @@ public class MonsterSpawner : MonoBehaviour
 
         if (Vector3.Distance(target.transform.position, activeMonster.GetComponent<Transform>().position) <= 0)
         {
-            Debug.Log("Hit");
-            Destroy(activeMonster.gameObject);
-            //activeMonster = null;
-            monsterActive = false;
+            DestroyMonster();
+            // miss actions
         }
     }
 
