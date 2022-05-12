@@ -43,10 +43,7 @@ public class Conductor : MonoBehaviour
 
     #region monster vars
     // monster
-    [SerializeField] List<Monster> monsters;
-    [SerializeField] List<Transform> spawnpoints;
-    [SerializeField] public GameObject target;
-    List<Monster> activeMonsters;
+
     #endregion
 
     void Update()
@@ -61,11 +58,7 @@ public class Conductor : MonoBehaviour
 
         if (nextIndex < spawns.Count && spawns[nextIndex].spawnBeat < songPositionInBeats + beatsShownInAdvance)
         {
-            activeMonsters.Add(Instantiate(monsters[spawns[nextIndex].monsterIndex],
-                                        spawnpoints[spawns[nextIndex].spawnpointIndex].position,
-                                        Quaternion.identity).GetComponent<Monster>());
-            activeMonsters[activeMonsters.Count-1].targetPosition = target.transform.position;
-
+            // SPAWN MONSTER HERE 
             //initialize the fields of the music note
 
             nextIndex++;

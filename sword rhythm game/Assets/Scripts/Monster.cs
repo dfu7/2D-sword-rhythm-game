@@ -9,6 +9,9 @@ public class Monster : MonoBehaviour
     private Vector3 startPosition;
     float t = 0;
     public string ring;
+    public float beatsInAdvance;
+    public float beatOfThisNote;
+    public float songPosInBeats;
 
     private void Start()
     {
@@ -19,9 +22,11 @@ public class Monster : MonoBehaviour
     {
         if (canMove)
         {
-            t += Time.deltaTime / timeToReachTarget;
-            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
-            // (BeatsShownInAdvance - (beatOfThisNote - songPosInBeats)) / BeatsShownInAdvance
+            transform.position = Vector3.Lerp(
+                startPosition,
+                targetPosition,
+                (beatsInAdvance - (beatOfThisNote - songPosInBeats)) / beatsInAdvance
+                );
         }
     }
 }
