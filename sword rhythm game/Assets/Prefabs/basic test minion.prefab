@@ -113,11 +113,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca072532fc35b1488ee01028424532a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
   targetPosition: {x: 0, y: 0, z: 0}
-  canMove: 0
-  timeToReachTarget: 3
+  canMove: 1
   ring: 
+  beatsToWait: 0
+  spawnBeat: 0
+  travelTimeInBeats: 4
 --- !u!50 &2577396156254756838
 Rigidbody2D:
   serializedVersion: 4

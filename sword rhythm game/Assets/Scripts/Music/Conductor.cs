@@ -13,7 +13,6 @@ public class Conductor : MonoBehaviour
     public float dspSongTime;
     public int beatsShownInAdvance = 3;
     public AudioSource musicSource;
-    int nextIndex = 0;
     #endregion
 
     [System.Serializable]
@@ -54,27 +53,6 @@ public class Conductor : MonoBehaviour
 
         //determine how many beats since the song started
         songPositionInBeats = songPosition / secPerBeat;
-        #endregion
-
-        if (nextIndex < spawns.Count && spawns[nextIndex].spawnBeat < songPositionInBeats + beatsShownInAdvance)
-        {
-            // SPAWN MONSTER HERE 
-            //initialize the fields of the music note
-
-            nextIndex++;
-        }
-
-        #region controls
-        if (activeMonsters[0].ring == "perf" && Input.GetKeyDown(KeyCode.F))
-        {
-            Debug.Log("Hit");
-            activeMonsters.RemoveAt(0);
-        }
-
-        if (activeMonsters[0].ring == "miss")
-        {
-            activeMonsters.RemoveAt(0);
-        }
         #endregion
     }
 }

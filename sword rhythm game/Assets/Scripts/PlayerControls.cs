@@ -4,49 +4,68 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
-    bool monsterActive = false;
-    [SerializeField] GameObject monster;
-    [SerializeField] float spawnMin;
-    [SerializeField] float spawnMax;
-    [SerializeField] List<Transform> spawnpoints;
-    [SerializeField] float spawnY;
-    [SerializeField] GameObject target;
-    public float timeToTarget = 3;
+    public static PlayerControls Instance;
 
-    private Monster activeMonster;
-    [SerializeField] Transform leftRingPoint;
-    [SerializeField] Transform centerRingPoint;
-    [SerializeField] Transform rightRingPoint;
+    [System.Serializable]
+    public struct Lane
+    {
+        public Transform SpawnPoint;
+        public Transform RingPoint;
+        public Queue<Monster> Monsters;
+    }
+
+    public List<Lane> Lanes;
+
+    float timeSinceLeftPressed = 0;
+    float timeSinceRightPressed = 0;
+
+    private void Start()
+    {
+        if (Instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (!monsterActive)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            monsterActive = true;
-
-            activeMonster = Instantiate(monster, spawnpoints[Random.Range(0, 3)].position, Quaternion.identity).GetComponent<Monster>();
-            activeMonster.canMove = true;
-            activeMonster.targetPosition = target.transform.position;
-            activeMonster.timeToReachTarget = timeToTarget;
+            timeSinceLeftPressed = 0.1f;
         }
-        */
-
-        if (Input.GetKeyDown(KeyCode.J) && Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            // used notif
-
-            float d = Vector3.Distance(leftRingPoint.position, activeMonster.GetComponent<Transform>().position);
-            Debug.Log("center swing: " + d);
-
-            CheckDistance(d);
+            timeSinceRightPressed = 0.1f;
         }
 
-        if (Vector3.Distance(target.transform.position, activeMonster.GetComponent<Transform>().position) <= 0)
+        timeSinceLeftPressed = Mathf.Clamp01(timeSinceLeftPressed - Time.deltaTime);
+        timeSinceRightPressed = Mathf.Clamp01(timeSinceRightPressed - Time.deltaTime);
+
+        if (timeSinceLeftPressed > 0 && timeSinceRightPressed > 0)
         {
-            DestroyMonster();
-            // miss actions
+            OnUpSwing();
+        }
+        else if (timeSinceLeftPressed > 0)
+        {
+            OnLeftSwing();
+        }
+        else if (timeSinceRightPressed > 0)
+        {
+            OnRightSwing();
+        }
+
+        foreach (Lane lane in Lanes)
+        {
+            if (Vector3.Distance(lane.RingPoint.position, lane.Monsters.Peek().transform.position) <= 0)
+            {
+                // TODO: Miss
+                Destroy(lane.Monsters.Dequeue());
+                // miss actions
+            }
+            
         }
     }
 
@@ -54,22 +73,32 @@ public class PlayerControls : MonoBehaviour
     {
         // used notif
 
-        float d = Vector3.Distance(leftRingPoint.position, activeMonster.GetComponent<Transform>().position);
+        float d = Vector3.Distance(Lanes[0].RingPoint.position, Lanes[0].Monsters.Peek().transform.position);
         Debug.Log("left swing: " + d);
-        CheckDistance(d);
+        CheckDistance(d, 0);
     }
 
     void OnRightSwing()
     {
         // used notif
 
-        float d = Vector3.Distance(rightRingPoint.position, activeMonster.GetComponent<Transform>().position);
+        float d = Vector3.Distance(Lanes[2].RingPoint.position, Lanes[2].Monsters.Peek().transform.position);
         Debug.Log("right swing: " + d);
 
-        CheckDistance(d);
+        CheckDistance(d, 2);
     }
 
-    void CheckDistance(float distance)
+    void OnUpSwing()
+    {
+        // used notif
+
+        float d = Vector3.Distance(Lanes[1].RingPoint.position, Lanes[1].Monsters.Peek().transform.position);
+        Debug.Log("center swing: " + d);
+
+        CheckDistance(d, 1);
+    }
+
+    void CheckDistance(float distance, int lane)
     {
         if (distance > 0.8)
         {
@@ -90,14 +119,8 @@ public class PlayerControls : MonoBehaviour
                 // late notif + actions
             }
 
-            DestroyMonster();
+            Destroy(Lanes[lane].Monsters.Dequeue());
             Debug.Log("Destroy");
         }
-    }
-
-    void DestroyMonster()
-    {
-        Destroy(activeMonster.gameObject);
-        monsterActive = false;
     }
 }

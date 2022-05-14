@@ -4,29 +4,27 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public Vector3 targetPosition;
-    public bool canMove = false;
+    public Transform targetPosition;
     private Vector3 startPosition;
-    float t = 0;
-    public string ring;
-    public float beatsInAdvance;
-    public float beatOfThisNote;
-    public float songPosInBeats;
+    public float beatsToWait;
+    public float spawnBeat;
+    public float travelTimeInBeats = 4;
+
+    private Conductor m_conductor;
+
+    private void Awake()
+    {
+        m_conductor = FindObjectOfType<Conductor>();
+    }
 
     private void Start()
     {
         startPosition = transform.position;
+        spawnBeat = m_conductor.songPositionInBeats;
     }
 
     void Update()
     {
-        if (canMove)
-        {
-            transform.position = Vector3.Lerp(
-                startPosition,
-                targetPosition,
-                (beatsInAdvance - (beatOfThisNote - songPosInBeats)) / beatsInAdvance
-                );
-        }
+        transform.position = Vector3.Lerp(startPosition, targetPosition.position, Mathf.Clamp01((m_conductor.songPositionInBeats - spawnBeat - beatsToWait) / travelTimeInBeats));
     }
 }
