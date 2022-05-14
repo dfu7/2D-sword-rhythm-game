@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class HitNotication : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private TextMesh textMesh;
 
-    // Update is called once per frame
-    void Update()
+    public void Awake()
     {
         
     }
