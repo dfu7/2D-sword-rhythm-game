@@ -7,7 +7,7 @@ public class PlayerControls : MonoBehaviour
     public static PlayerControls Instance;
 
     [System.Serializable]
-    public struct Lane
+    public class Lane
     {
         public Transform SpawnPoint;
         public Transform RingPoint;
@@ -27,6 +27,10 @@ public class PlayerControls : MonoBehaviour
             return;
         }
         Instance = this;
+        foreach (Lane lane in Lanes)
+        {
+            lane.Monsters = new Queue<Monster>();
+        }
     }
 
     // Update is called once per frame
@@ -59,10 +63,10 @@ public class PlayerControls : MonoBehaviour
 
         foreach (Lane lane in Lanes)
         {
-            if (Vector3.Distance(lane.RingPoint.position, lane.Monsters.Peek().transform.position) <= 0)
+            if (lane.Monsters.Count > 0 && Vector3.Distance(lane.RingPoint.position, lane.Monsters.Peek().transform.position) <= 0)
             {
                 // TODO: Miss
-                Destroy(lane.Monsters.Dequeue());
+                //Destroy(lane.Monsters.Dequeue());
                 // miss actions
             }
             
@@ -72,6 +76,10 @@ public class PlayerControls : MonoBehaviour
     void OnLeftSwing()
     {
         // used notif
+        if (Lanes[0].Monsters.Count == 0)
+        {
+            return;
+        }
 
         float d = Vector3.Distance(Lanes[0].RingPoint.position, Lanes[0].Monsters.Peek().transform.position);
         Debug.Log("left swing: " + d);
@@ -81,6 +89,10 @@ public class PlayerControls : MonoBehaviour
     void OnRightSwing()
     {
         // used notif
+        if (Lanes[2].Monsters.Count == 0)
+        {
+            return;
+        }
 
         float d = Vector3.Distance(Lanes[2].RingPoint.position, Lanes[2].Monsters.Peek().transform.position);
         Debug.Log("right swing: " + d);
@@ -91,6 +103,10 @@ public class PlayerControls : MonoBehaviour
     void OnUpSwing()
     {
         // used notif
+        if (Lanes[1].Monsters.Count == 0)
+        {
+            return;
+        }
 
         float d = Vector3.Distance(Lanes[1].RingPoint.position, Lanes[1].Monsters.Peek().transform.position);
         Debug.Log("center swing: " + d);
@@ -115,12 +131,11 @@ public class PlayerControls : MonoBehaviour
             }
             else if (distance > 0.3 && distance <= 0.8)
             {
-                Debug.Log("Late");
+                Debug.Log("Almost");
                 // late notif + actions
             }
 
             Destroy(Lanes[lane].Monsters.Dequeue());
-            Debug.Log("Destroy");
         }
     }
 }
