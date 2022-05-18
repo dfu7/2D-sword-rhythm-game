@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4094148610190522798}
   - component: {fileID: 3031908138495968190}
-  - component: {fileID: 1673578966291304331}
   m_Layer: 0
   m_Name: late collider
   m_TagString: Untagged
@@ -48,18 +47,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.6415367
---- !u!114 &1673578966291304331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221762527516894006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61f834ef8151abe4599b0f29e87f2dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3185411906922941999
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +142,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8438024266894529520}
   - component: {fileID: 3002745104154546980}
-  - component: {fileID: 2325864106269015647}
   m_Layer: 0
   m_Name: miss collider
   m_TagString: Untagged
@@ -193,18 +179,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.3362411
---- !u!114 &2325864106269015647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4597504627555924606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61f834ef8151abe4599b0f29e87f2dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9051924398211848881
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +189,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6871768722829609752}
   - component: {fileID: 1740304472193997234}
-  - component: {fileID: 3194608468580901489}
   m_Layer: 0
   m_Name: perfect collider
   m_TagString: Untagged
@@ -253,15 +226,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.948987
---- !u!114 &3194608468580901489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051924398211848881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61f834ef8151abe4599b0f29e87f2dfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

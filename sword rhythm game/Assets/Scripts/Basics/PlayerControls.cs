@@ -135,7 +135,7 @@ public class PlayerControls : MonoBehaviour
                 // late notif + actions
             }
 
-            Destroy(Lanes[lane].Monsters.Dequeue());
+            //Destroy(Lanes[lane].Monsters.Dequeue());
         }
     }
 }
