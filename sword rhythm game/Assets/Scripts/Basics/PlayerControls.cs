@@ -16,8 +16,8 @@ public class PlayerControls : MonoBehaviour
 
     public List<Lane> Lanes;
 
-    float timeSinceLeftPressed = 0;
-    float timeSinceRightPressed = 0;
+    //float timeSinceLeftPressed = 0;
+    //float timeSinceRightPressed = 0;
 
     private void Start()
     {
@@ -36,6 +36,7 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.D))
         {
             timeSinceLeftPressed = 0.1f;
@@ -60,6 +61,7 @@ public class PlayerControls : MonoBehaviour
         {
             OnRightSwing();
         }
+        */
 
         foreach (Lane lane in Lanes)
         {
