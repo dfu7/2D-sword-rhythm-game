@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerControls : MonoBehaviour
 {
     public static PlayerControls Instance;
+
+    public delegate void HitAcc(string test);
+    public HitAcc hitAcc;
 
     [System.Serializable]
     public class Lane
@@ -121,19 +125,21 @@ public class PlayerControls : MonoBehaviour
         if (distance > 0.8)
         {
             Debug.Log("Miss");
-            // miss notif
+            hitAcc?.Invoke("Miss");
         }
         else
         {
             if (distance <= 0.3)
             {
                 Debug.Log("Perfect");
+                hitAcc?.Invoke("Perfect");
                 // perfect notif + actions
 
             }
             else if (distance > 0.3 && distance <= 0.8)
             {
                 Debug.Log("Almost");
+                hitAcc?.Invoke("Almost");
                 // late notif + actions
             }
 
