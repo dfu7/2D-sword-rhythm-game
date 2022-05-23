@@ -89,8 +89,8 @@ public class PlayerControls : MonoBehaviour
             return;
         }
 
-        float d = Vector3.Distance(Lanes[0].RingPoint.position, Lanes[0].Monsters.Peek().transform.position);
-        //Debug.Log("left swing: " + d);
+        float d = Vector3.Distance(Lanes[0].RingPoint.position, Lanes[0].Monsters.Peek().transform.Find("target").position);
+        Debug.Log("left swing: " + d);
         CheckDistance(d, 0);
     }
 
@@ -103,7 +103,7 @@ public class PlayerControls : MonoBehaviour
             return;
         }
 
-        float d = Vector3.Distance(Lanes[2].RingPoint.position, Lanes[2].Monsters.Peek().transform.position);
+        float d = Vector3.Distance(Lanes[2].RingPoint.position, Lanes[2].Monsters.Peek().transform.Find("target").position);
         Debug.Log("right swing: " + d);
 
         CheckDistance(d, 2);
@@ -118,7 +118,7 @@ public class PlayerControls : MonoBehaviour
             return;
         }
 
-        float d = Vector3.Distance(Lanes[1].RingPoint.position, Lanes[1].Monsters.Peek().transform.position);
+        float d = Vector3.Distance(Lanes[1].RingPoint.position, Lanes[1].Monsters.Peek().transform.Find("target").position);
         Debug.Log("center swing: " + d);
 
         CheckDistance(d, 1);
@@ -128,21 +128,21 @@ public class PlayerControls : MonoBehaviour
     {
         if (distance > 0.8)
         {
-            //Debug.Log("Miss");
+            Debug.Log("Miss");
             hitAcc?.Invoke("Miss");
         }
         else
         {
             if (distance <= 0.3)
             {
-                //Debug.Log("Perfect");
+                Debug.Log("Perfect");
                 hitAcc?.Invoke("Perfect");
                 // perfect notif + actions
 
             }
             else if (distance > 0.3 && distance <= 0.8)
             {
-                //Debug.Log("Almost");
+                Debug.Log("Almost");
                 hitAcc?.Invoke("Almost");
                 // late notif + actions
             }
