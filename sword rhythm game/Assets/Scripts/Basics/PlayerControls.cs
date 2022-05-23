@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
 public class PlayerControls : MonoBehaviour
 {
     public static PlayerControls Instance;
 
-    public delegate void HitAcc(string test);
-    public HitAcc hitAcc;
+    public static event Action<string> hitAcc;
+    public static event Action<string> hitDir;
 
     [System.Serializable]
     public class Lane
@@ -81,20 +82,22 @@ public class PlayerControls : MonoBehaviour
 
     void OnLeftSwing()
     {
-        // used notif
+        hitDir?.Invoke("Left");
+
         if (Lanes[0].Monsters.Count == 0)
         {
             return;
         }
 
         float d = Vector3.Distance(Lanes[0].RingPoint.position, Lanes[0].Monsters.Peek().transform.position);
-        Debug.Log("left swing: " + d);
+        //Debug.Log("left swing: " + d);
         CheckDistance(d, 0);
     }
 
     void OnRightSwing()
     {
-        // used notif
+        hitDir?.Invoke("Right");
+
         if (Lanes[2].Monsters.Count == 0)
         {
             return;
@@ -108,7 +111,8 @@ public class PlayerControls : MonoBehaviour
 
     void OnUpSwing()
     {
-        // used notif
+        hitDir?.Invoke("Up");
+
         if (Lanes[1].Monsters.Count == 0)
         {
             return;
@@ -124,21 +128,21 @@ public class PlayerControls : MonoBehaviour
     {
         if (distance > 0.8)
         {
-            Debug.Log("Miss");
+            //Debug.Log("Miss");
             hitAcc?.Invoke("Miss");
         }
         else
         {
             if (distance <= 0.3)
             {
-                Debug.Log("Perfect");
+                //Debug.Log("Perfect");
                 hitAcc?.Invoke("Perfect");
                 // perfect notif + actions
 
             }
             else if (distance > 0.3 && distance <= 0.8)
             {
-                Debug.Log("Almost");
+                //Debug.Log("Almost");
                 hitAcc?.Invoke("Almost");
                 // late notif + actions
             }
