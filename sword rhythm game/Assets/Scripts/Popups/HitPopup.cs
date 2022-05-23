@@ -10,7 +10,6 @@ public class HitPopup : MonoBehaviour
     private float disappearTimer;
     private Color textColor;
     
-    public GameObject pfHitPopup;
 
     //Create a HitAcc
     /*public static HitPopup Create(Vector3 position, string hitAcc)
@@ -21,8 +20,7 @@ public class HitPopup : MonoBehaviour
         hitPopup.TextChange(hitAcc);
 
         return hitPopup;
-    }
-    */
+    }*/
 
     private void Awake()
     {
@@ -30,22 +28,11 @@ public class HitPopup : MonoBehaviour
         
     }
 
-    private void OnEnable()
-    {
-        PlayerControls.hitAcc += TextChange;
-    }
-
-    private void OnDisable()
-    {
-        PlayerControls.hitAcc -= TextChange;
-    }
-
     private void TextChange(string hitAcc)
     {
-        /*textMesh.SetText(hitAcc);
+        textMesh.SetText(hitAcc);
         textColor = textMesh.color;
         disappearTimer = 1f;
-        */
         Debug.Log(hitAcc);
     }
 

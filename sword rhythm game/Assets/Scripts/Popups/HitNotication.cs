@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class HitNotication : MonoBehaviour
 {
-    private TextMesh textMesh;
+    public GameObject pfHitPopup;
 
-    public void Awake()
+    private void OnEnable()
     {
-        
+        PlayerControls.hitAcc += CreatePopup;
     }
 
+    private void OnDisable()
+    {
+        PlayerControls.hitAcc -= CreatePopup;
+    }
+
+    public void CreatePopup(string text)
+    {
+
+    }
 }
