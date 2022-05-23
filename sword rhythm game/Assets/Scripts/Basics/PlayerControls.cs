@@ -21,8 +21,6 @@ public class PlayerControls : MonoBehaviour
 
     public List<Lane> Lanes;
 
-    //float timeSinceLeftPressed = 0;
-    //float timeSinceRightPressed = 0;
 
     private void Start()
     {
@@ -41,40 +39,11 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.D))
-        {
-            timeSinceLeftPressed = 0.1f;
-        }
-        if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K))
-        {
-            timeSinceRightPressed = 0.1f;
-        }
-
-        timeSinceLeftPressed = Mathf.Clamp01(timeSinceLeftPressed - Time.deltaTime);
-        timeSinceRightPressed = Mathf.Clamp01(timeSinceRightPressed - Time.deltaTime);
-
-        if (timeSinceLeftPressed > 0 && timeSinceRightPressed > 0)
-        {
-            OnUpSwing();
-        }
-        else if (timeSinceLeftPressed > 0)
-        {
-            OnLeftSwing();
-        }
-        else if (timeSinceRightPressed > 0)
-        {
-            OnRightSwing();
-        }
-        */
-
         foreach (Lane lane in Lanes)
         {
             if (lane.Monsters.Count > 0 && Vector3.Distance(lane.RingPoint.position, lane.Monsters.Peek().transform.position) <= 0)
             {
-                // TODO: Miss
                 //Destroy(lane.Monsters.Dequeue());
-                // miss actions
             }
             
         }
@@ -126,6 +95,7 @@ public class PlayerControls : MonoBehaviour
 
     void CheckDistance(float distance, int lane)
     {
+        // miss
         if (distance > 0.8)
         {
             Debug.Log("Miss");
@@ -133,21 +103,20 @@ public class PlayerControls : MonoBehaviour
         }
         else
         {
+            // perfect
             if (distance <= 0.3)
             {
                 Debug.Log("Perfect");
                 hitAcc?.Invoke("Perfect");
-                // perfect notif + actions
-
             }
+            // almost
             else if (distance > 0.3 && distance <= 0.8)
             {
                 Debug.Log("Almost");
                 hitAcc?.Invoke("Almost");
-                // late notif + actions
             }
 
-            //Destroy(Lanes[lane].Monsters.Dequeue());
+            Destroy(Lanes[lane].Monsters.Dequeue().gameObject);
         }
     }
 }
