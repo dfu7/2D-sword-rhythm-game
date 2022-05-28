@@ -51,7 +51,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         scoreText.SetText(score.ToString() + " pts");
-        comboText.SetText("Combo: " + combo.ToString());
+        comboText.SetText(/*"Combo: " + */combo.ToString());
     }
 
     void ResetCombo()

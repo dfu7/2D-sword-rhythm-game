@@ -55,6 +55,11 @@ public class MainMenu : MonoBehaviour
         masterAudioMixer.SetFloat("music-volume", Mathf.Log10(level) * 20);
     }
 
+    public void SetMasterVolume(float level)
+    {
+        masterAudioMixer.SetFloat("master-volume", Mathf.Log10(level) * 20);
+    }
+
     public void ToggleMute(bool muted) {
         masterAudioMixer.SetFloat("master-volume", muted ? -80 : 0);
     }
