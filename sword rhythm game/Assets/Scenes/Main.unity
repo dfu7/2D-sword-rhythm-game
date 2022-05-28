@@ -585,18 +585,33 @@ MonoBehaviour:
   - {fileID: 549015576}
   - {fileID: 1192267354}
   spawns:
-  - spawnBeat: 4
-    laneIndex: 0
-    monsterIndex: 1
-  - spawnBeat: 6
-    laneIndex: 1
-    monsterIndex: 1
-  - spawnBeat: 8
-    laneIndex: 2
-    monsterIndex: 1
-  - spawnBeat: 16
+  - spawnBeat: 9
     laneIndex: 0
     monsterIndex: 0
+  - spawnBeat: 16
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 33
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 33.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 41
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 45
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 49
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 52
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 55
+    laneIndex: 0
+    monsterIndex: 1
 --- !u!4 &464065059
 Transform:
   m_ObjectHideFlags: 0
