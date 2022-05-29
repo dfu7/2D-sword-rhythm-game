@@ -55,15 +55,27 @@ public class MainMenu : MonoBehaviour
     public void SetSFXVolume(float level) {
         // must convert values from db using log10
         masterAudioMixer.SetFloat("sfx-volume", Mathf.Log10(level) * 20);
+        if (level == 0)
+        {
+            masterAudioMixer.SetFloat("sfx-volume", -80);
+        }
     }
 
     public void SetMusicVolume(float level) {
         masterAudioMixer.SetFloat("music-volume", Mathf.Log10(level) * 20);
+        if (level == 0)
+        {
+            masterAudioMixer.SetFloat("music-volume", -80);
+        }
     }
 
     public void SetMasterVolume(float level)
     {
         masterAudioMixer.SetFloat("master-volume", Mathf.Log10(level) * 20);
+        if (level == 0)
+        {
+            masterAudioMixer.SetFloat("master-volume", -80);
+        }
     }
 
     public void ToggleMute(bool muted) {
