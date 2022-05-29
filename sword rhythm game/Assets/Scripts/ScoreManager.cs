@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
+
 
 public class ScoreManager : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class ScoreManager : MonoBehaviour
     public int perfectPoints = 1000;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI comboText;
+    public AudioSource audioSource;
 
     private void OnEnable()
     {
@@ -70,6 +73,10 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!audioSource.isPlaying)
+        {
+
+            SceneManager.LoadScene("Fin");
+        }
     }
 }

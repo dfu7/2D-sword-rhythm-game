@@ -1780,6 +1780,7 @@ MonoBehaviour:
   perfectPoints: 1000
   scoreText: {fileID: 1920224999}
   comboText: {fileID: 1227340048}
+  audioSource: {fileID: 1877944026}
 --- !u!4 &1944298167
 Transform:
   m_ObjectHideFlags: 0
