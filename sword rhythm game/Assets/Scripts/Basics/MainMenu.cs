@@ -8,10 +8,16 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject ControlsMenu;
     [SerializeField] AudioMixer masterAudioMixer;
     [SerializeField] GameObject Menu;
- 
+
+    public GameObject PlayButton;
+    public GameObject QuitButton;
+    public GameObject SoundButton;
+
     public void PlayGame()
     {
-        SceneManager.LoadScene("Main");
+        PlayButton.GetComponent<Animator>().enabled = true;
+        QuitButton.GetComponent<Animator>().enabled = true;
+        SoundButton.GetComponent<Animator>().enabled = true;
     }
 
     public void QuitGame()

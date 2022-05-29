@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8531978}
   - component: {fileID: 8531977}
+  - component: {fileID: 8531979}
   m_Layer: 0
   m_Name: ring2
   m_TagString: Untagged
@@ -205,6 +206,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8531979
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ddb779d0e63a2aa41b8c77c0bc717e84, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &110850312
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +282,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13550019f6f1e2f44aa314ad0debc6d2, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -281,8 +301,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110850312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0171, y: -6.15, z: 0}
-  m_LocalScale: {x: 25.852348, y: 2.5969, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -1874,7 +1894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 529572218245683620, guid: 4eb897d386e61d047b294c2635fc155f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.63
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 529572218245683620, guid: 4eb897d386e61d047b294c2635fc155f, type: 3}
       propertyPath: m_LocalPosition.z

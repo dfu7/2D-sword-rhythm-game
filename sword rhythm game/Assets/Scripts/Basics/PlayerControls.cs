@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
+
 
 
 public class PlayerControls : MonoBehaviour
@@ -118,5 +120,11 @@ public class PlayerControls : MonoBehaviour
 
             Destroy(Lanes[lane].Monsters.Dequeue().gameObject);
         }
+    }
+
+    void OnHoldingEscape()
+    {
+        SceneManager.LoadScene("Start");
+        Debug.Log("Go back to start menu");
     }
 }

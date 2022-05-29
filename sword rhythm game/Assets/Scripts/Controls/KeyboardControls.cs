@@ -53,6 +53,15 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HoldingEscape"",
+                    ""type"": ""Button"",
+                    ""id"": ""43f4e3bd-38f5-40d0-b91c-47217a3afab8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -110,6 +119,17 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
                     ""action"": ""UpSwing"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7a22d56e-c182-4972-9d3f-c65587c358f7"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": ""Hold(duration=3)"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HoldingEscape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -121,6 +141,7 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
         m_Default_LeftSwing = m_Default.FindAction("LeftSwing", throwIfNotFound: true);
         m_Default_RightSwing = m_Default.FindAction("RightSwing", throwIfNotFound: true);
         m_Default_UpSwing = m_Default.FindAction("UpSwing", throwIfNotFound: true);
+        m_Default_HoldingEscape = m_Default.FindAction("HoldingEscape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,6 +204,7 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Default_LeftSwing;
     private readonly InputAction m_Default_RightSwing;
     private readonly InputAction m_Default_UpSwing;
+    private readonly InputAction m_Default_HoldingEscape;
     public struct DefaultActions
     {
         private @KeyboardControls m_Wrapper;
@@ -190,6 +212,7 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
         public InputAction @LeftSwing => m_Wrapper.m_Default_LeftSwing;
         public InputAction @RightSwing => m_Wrapper.m_Default_RightSwing;
         public InputAction @UpSwing => m_Wrapper.m_Default_UpSwing;
+        public InputAction @HoldingEscape => m_Wrapper.m_Default_HoldingEscape;
         public InputActionMap Get() { return m_Wrapper.m_Default; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -208,6 +231,9 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
                 @UpSwing.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnUpSwing;
                 @UpSwing.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnUpSwing;
                 @UpSwing.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnUpSwing;
+                @HoldingEscape.started -= m_Wrapper.m_DefaultActionsCallbackInterface.OnHoldingEscape;
+                @HoldingEscape.performed -= m_Wrapper.m_DefaultActionsCallbackInterface.OnHoldingEscape;
+                @HoldingEscape.canceled -= m_Wrapper.m_DefaultActionsCallbackInterface.OnHoldingEscape;
             }
             m_Wrapper.m_DefaultActionsCallbackInterface = instance;
             if (instance != null)
@@ -221,6 +247,9 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
                 @UpSwing.started += instance.OnUpSwing;
                 @UpSwing.performed += instance.OnUpSwing;
                 @UpSwing.canceled += instance.OnUpSwing;
+                @HoldingEscape.started += instance.OnHoldingEscape;
+                @HoldingEscape.performed += instance.OnHoldingEscape;
+                @HoldingEscape.canceled += instance.OnHoldingEscape;
             }
         }
     }
@@ -230,5 +259,6 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
         void OnLeftSwing(InputAction.CallbackContext context);
         void OnRightSwing(InputAction.CallbackContext context);
         void OnUpSwing(InputAction.CallbackContext context);
+        void OnHoldingEscape(InputAction.CallbackContext context);
     }
 }

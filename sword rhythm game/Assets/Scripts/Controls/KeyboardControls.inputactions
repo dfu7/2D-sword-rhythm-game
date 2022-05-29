@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "HoldingEscape",
+                    "type": "Button",
+                    "id": "43f4e3bd-38f5-40d0-b91c-47217a3afab8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -86,6 +95,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "UpSwing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7a22d56e-c182-4972-9d3f-c65587c358f7",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "Hold(duration=3)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HoldingEscape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
