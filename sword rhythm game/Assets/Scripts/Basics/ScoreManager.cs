@@ -10,12 +10,15 @@ public class ScoreManager : MonoBehaviour
 {
     public int score = 0;
     public int combo = 0;
+    public int failCombo = 0;
+    public int failThreshold = 10;
     private float pointMultiplier = 1;
     private float extraPoints = 0;
     public int comboStart = 2;
     public int almostPoints = 500;
     public int perfectPoints = 1000;
     public int missPointLoss = 500;
+    public int failPointLoss = 1000;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI comboText;
     public AudioSource audioSource;
@@ -32,25 +35,35 @@ public class ScoreManager : MonoBehaviour
 
     void ConvertScore(string hitAcc)
     {
+        if (hitAcc == "Fail")
+        {
+            Debug.LogWarning("F");
+            ResetCombo();
+            score -= failPointLoss;
+            failCombo += 1;
+        }
+
         if (hitAcc == "Miss")
         {
             ResetCombo();
-            if (score - missPointLoss < 0)
-            {
-                score = 0;
-            }
-            else
-            {
-                score -= missPointLoss;
-            }
+            score -= missPointLoss;
         }
-        else if (hitAcc == "Almost")
+
+        if (failCombo >= failThreshold)
         {
+            SceneManager.LoadScene("Lose");
+        }
+
+        if (hitAcc == "Almost")
+        {
+            failCombo = 0;
             ResetCombo();
             score += almostPoints;
         }
-        else if (hitAcc == "Perfect")
+        
+        if (hitAcc == "Perfect")
         {
+            failCombo = 0;
             combo += 1;
 
             if (combo >= comboStart)
@@ -60,6 +73,12 @@ public class ScoreManager : MonoBehaviour
             }
 
             score += perfectPoints + (int)extraPoints;
+        }
+
+
+        if (score < 0)
+        {
+            score = 0;
         }
 
         scoreText.SetText(score.ToString() + " pts");

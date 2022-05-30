@@ -76,6 +76,7 @@ public class PlayerControls : MonoBehaviour
                     if (Vector3.Distance(monster.targetPosition.transform.position, monster.transform.position) <= 0)
                     {
                         monster.targetPosition = monster.swordsmanT.transform;
+                        hitAcc?.Invoke("Fail");
                     }
                 }
             }
