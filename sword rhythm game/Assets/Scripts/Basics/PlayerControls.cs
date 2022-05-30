@@ -13,6 +13,9 @@ public class PlayerControls : MonoBehaviour
     public static event Action<string> hitAcc;
     public static event Action<string> hitDir;
 
+    [SerializeField]
+    Animator animator;
+
     [System.Serializable]
     public class Lane
     {
@@ -26,6 +29,7 @@ public class PlayerControls : MonoBehaviour
 
     private void Start()
     {
+
         if (Instance)
         {
             Destroy(gameObject);
@@ -83,7 +87,8 @@ public class PlayerControls : MonoBehaviour
     void OnLeftSwing()
     {
         hitDir?.Invoke("Left");
-
+        animator.SetBool("AttackLeft", true);
+        
         if (Lanes[0].Monsters.Count == 0)
         {
             return;
@@ -92,11 +97,14 @@ public class PlayerControls : MonoBehaviour
         float d = Vector3.Distance(Lanes[0].RingPoint.position, Lanes[0].Monsters.Peek().transform.Find("target").position);
         Debug.Log("left swing: " + d);
         CheckDistance(d, 0);
+
+        
     }
 
     void OnRightSwing()
     {
         hitDir?.Invoke("Right");
+        animator.SetBool("AttackRight", true);
 
         if (Lanes[2].Monsters.Count == 0)
         {
@@ -112,6 +120,7 @@ public class PlayerControls : MonoBehaviour
     void OnUpSwing()
     {
         hitDir?.Invoke("Up");
+        animator.SetBool("AttackUp", true);
 
         if (Lanes[1].Monsters.Count == 0)
         {
@@ -156,4 +165,6 @@ public class PlayerControls : MonoBehaviour
         SceneManager.LoadScene("Start");
         Debug.Log("Go back to start menu");
     }
+
+ 
 }

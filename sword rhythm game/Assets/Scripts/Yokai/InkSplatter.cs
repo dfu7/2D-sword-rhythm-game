@@ -5,6 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class InkSplatter : MonoBehaviour
 {
+    [SerializeField]
+    Animator animator;
+
+    public void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public void Disappear()
     {
         Destroy(gameObject);
@@ -13,5 +21,12 @@ public class InkSplatter : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void AttackOver()
+    {
+        animator.SetBool("AttackLeft", false);
+        animator.SetBool("AttackUp", false);
+        animator.SetBool("AttackRight", false);
     }
 }
