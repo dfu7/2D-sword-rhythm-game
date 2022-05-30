@@ -51,8 +51,15 @@ public class Conductor : MonoBehaviour
         //determine how many seconds since the song started
         songPosition = (float)(AudioSettings.dspTime - dspSongTime);
 
+        var prevBeat = Mathf.RoundToInt(songPositionInBeats);
+
         //determine how many beats since the song started
         songPositionInBeats = songPosition / secPerBeat;
+        if (prevBeat != Mathf.RoundToInt(songPositionInBeats))
+        {
+            Debug.Log(Mathf.RoundToInt(songPositionInBeats));
+        }
+
         #endregion
     }
 }
