@@ -115,9 +115,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
+  swordsmanT: {fileID: 529572218245683620, guid: 4eb897d386e61d047b294c2635fc155f, type: 3}
   beatsToWait: 0
   spawnBeat: 0
   travelTimeInBeats: 2.5
+  speed: 4
   pSplatter: {fileID: 989830310214614762, guid: 595e30a5cd748aa43a719c592b211f05, type: 3}
   inkSplatter: {fileID: 4873481897617260452, guid: 0d2a7647eb212ce4ab1923c4e37e90c6, type: 3}
   accuracy: 

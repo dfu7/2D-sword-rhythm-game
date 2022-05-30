@@ -596,6 +596,7 @@ MonoBehaviour:
   monsters:
   - {fileID: 5722454821290222129, guid: 1bb9fde4dbc95a946ac11772b1a9365a, type: 3}
   - {fileID: 2570940248482972871, guid: 17e022bee302f1c4fb790e144c4c89a5, type: 3}
+  - {fileID: 1878614654539024140, guid: 6ba9cd9a3deda114ebfdf39b48106481, type: 3}
   spawnpoints:
   - {fileID: 437446972}
   - {fileID: 184991646}
@@ -607,7 +608,7 @@ MonoBehaviour:
   spawns:
   - spawnBeat: 9
     laneIndex: 0
-    monsterIndex: 0
+    monsterIndex: 2
   - spawnBeat: 16
     laneIndex: 2
     monsterIndex: 0

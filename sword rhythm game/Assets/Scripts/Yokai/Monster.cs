@@ -5,10 +5,12 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     public Transform targetPosition;
+    public Transform swordsmanT;
     private Vector3 startPosition;
     public float beatsToWait;
     public float spawnBeat;
     public float travelTimeInBeats = 4;
+    public float speed = 0.1f;
 
     private Conductor m_conductor;
 
@@ -49,7 +51,14 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector3.Lerp(startPosition, targetPosition.position, Mathf.Clamp01((m_conductor.songPositionInBeats - spawnBeat - beatsToWait) / travelTimeInBeats));
+        if (targetPosition.transform == swordsmanT.transform)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, Time.deltaTime * speed);
+        }
+        else
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition.position, Mathf.Clamp01((m_conductor.songPositionInBeats - spawnBeat - beatsToWait) / travelTimeInBeats));
+        }
     }
 
     /*private void CreateInk(string Acc)

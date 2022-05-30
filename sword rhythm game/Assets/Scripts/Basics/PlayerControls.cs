@@ -41,14 +41,43 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         foreach (Lane lane in Lanes)
         {
+            if (lane.Monsters.Count > 0 && Vector3.Distance(lane.Monsters.Peek().transform.position, lane.Monsters.Peek().swordsmanT.transform.position) <= 0)
+            {
+                Destroy(lane.Monsters.Dequeue().gameObject);
+            }
+
             if (lane.Monsters.Count > 0 && Vector3.Distance(lane.RingPoint.position, lane.Monsters.Peek().transform.position) <= 0)
             {
-                //Destroy(lane.Monsters.Dequeue());
+                lane.RingPoint.position = lane.Monsters.Peek().transform.position;
+                lane.Monsters.Peek().targetPosition = lane.Monsters.Peek().swordsmanT.transform;
             }
-            
         }
+        */
+
+        
+        foreach (Lane lane in Lanes)
+        {
+            if (lane.Monsters.Count > 0)
+            {
+                if (Vector3.Distance(lane.Monsters.Peek().transform.position, lane.Monsters.Peek().swordsmanT.transform.position) <= 0)
+                {
+                    Destroy(lane.Monsters.Dequeue().gameObject);
+                }
+
+                foreach (Monster monster in lane.Monsters)
+                {
+                    if (Vector3.Distance(monster.targetPosition.transform.position, monster.transform.position) <= 0)
+                    {
+                        monster.targetPosition = monster.swordsmanT.transform;
+                    }
+                }
+            }
+
+        }
+        
     }
 
     void OnLeftSwing()
