@@ -91,6 +91,8 @@ public class PlayerControls : MonoBehaviour
         
         if (Lanes[0].Monsters.Count == 0)
         {
+            Debug.Log("Miss");
+            hitAcc?.Invoke("Miss");
             return;
         }
 
@@ -108,6 +110,8 @@ public class PlayerControls : MonoBehaviour
 
         if (Lanes[2].Monsters.Count == 0)
         {
+            Debug.Log("Miss");
+            hitAcc?.Invoke("Miss");
             return;
         }
 
@@ -124,6 +128,8 @@ public class PlayerControls : MonoBehaviour
 
         if (Lanes[1].Monsters.Count == 0)
         {
+            Debug.Log("Miss");
+            hitAcc?.Invoke("Miss");
             return;
         }
 

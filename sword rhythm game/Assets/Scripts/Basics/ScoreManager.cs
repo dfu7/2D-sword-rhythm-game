@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
     public int comboStart = 2;
     public int almostPoints = 500;
     public int perfectPoints = 1000;
+    public int missPointLoss = 500;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI comboText;
     public AudioSource audioSource;
@@ -34,6 +35,14 @@ public class ScoreManager : MonoBehaviour
         if (hitAcc == "Miss")
         {
             ResetCombo();
+            if (score - missPointLoss < 0)
+            {
+                score = 0;
+            }
+            else
+            {
+                score -= missPointLoss;
+            }
         }
         else if (hitAcc == "Almost")
         {
