@@ -29,4 +29,14 @@ public class InkSplatter : MonoBehaviour
         animator.SetBool("AttackUp", false);
         animator.SetBool("AttackRight", false);
     }
+
+    void FixedUpdate()
+    {
+        if(animator.GetBool("AttackLeft") == true && animator.GetBool("AttackUp") == true && animator.GetBool("AttackRight") == true)
+        {
+            animator.SetBool("AttackLeft", false);
+            animator.SetBool("AttackUp", false);
+            animator.SetBool("AttackRight", false);
+        }
+    }
 }
