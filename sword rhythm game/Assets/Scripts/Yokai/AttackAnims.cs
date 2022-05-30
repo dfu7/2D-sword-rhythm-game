@@ -19,7 +19,7 @@ public class AttackAnims : MonoBehaviour
         animator.SetBool("AttackRight", false);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (animator.GetBool("AttackLeft") == true && animator.GetBool("AttackUp") == true && animator.GetBool("AttackRight") == true)
         {
