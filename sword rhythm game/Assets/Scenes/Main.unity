@@ -657,6 +657,81 @@ MonoBehaviour:
   - spawnBeat: 62.33
     laneIndex: 0
     monsterIndex: 0
+  - spawnBeat: 65
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 65.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 66.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 69
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 69.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 70.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 73
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 75
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 77
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 81
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 81.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 85
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 85.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 89
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 91
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 93
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 97
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 97.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 101
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 101.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 103
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 103.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 104
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 104.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 105
+    laneIndex: 0
+    monsterIndex: 0
 --- !u!4 &464065059
 Transform:
   m_ObjectHideFlags: 0
