@@ -69,6 +69,7 @@ public class PlayerControls : MonoBehaviour
                 if (Vector3.Distance(lane.Monsters.Peek().transform.position, lane.Monsters.Peek().swordsmanT.transform.position) <= 0)
                 {
                     Destroy(lane.Monsters.Dequeue().gameObject);
+                    hitAcc?.Invoke("Fail");
                 }
 
                 foreach (Monster monster in lane.Monsters)
@@ -76,7 +77,6 @@ public class PlayerControls : MonoBehaviour
                     if (Vector3.Distance(monster.targetPosition.transform.position, monster.transform.position) <= 0)
                     {
                         monster.targetPosition = monster.swordsmanT.transform;
-                        hitAcc?.Invoke("Fail");
                     }
                 }
             }
