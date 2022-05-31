@@ -1125,6 +1125,15 @@ MonoBehaviour:
   - spawnBeat: 265.5
     laneIndex: 0
     monsterIndex: 0
+  - spawnBeat: 269
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 269.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 269.66
+    laneIndex: 0
+    monsterIndex: 0
 --- !u!4 &464065059
 Transform:
   m_ObjectHideFlags: 0
