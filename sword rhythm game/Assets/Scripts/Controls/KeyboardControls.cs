@@ -67,17 +67,6 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""68f9f59d-cd14-4760-bf30-9eca3d3ba57f"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""LeftSwing"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""69418dcb-9be2-4c6e-9531-78f27dc29e88"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
@@ -91,17 +80,6 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""839929f3-97c4-4458-9870-fc547a087cd0"",
                     ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""RightSwing"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8c8b3cd0-0452-4953-83a4-5730f148860e"",
-                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
