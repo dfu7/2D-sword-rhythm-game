@@ -33,7 +33,7 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
                     ""id"": ""1add1b37-172d-4c48-a55a-0aabf26ff1c9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap,Press(behavior=2)"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -42,7 +42,7 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
                     ""id"": ""7f60693e-0955-4037-a7b5-042e226cbc0f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap,Press(behavior=2)"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -51,7 +51,7 @@ public partial class @KeyboardControls : IInputActionCollection2, IDisposable
                     ""id"": ""96e930a1-13a2-42eb-b5c2-fe3ec400db2d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap,Press(behavior=2)"",
                     ""initialStateCheck"": false
                 },
                 {

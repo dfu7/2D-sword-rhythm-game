@@ -14,9 +14,9 @@ public class AttackAnims : MonoBehaviour
 
     public void AttackOver()
     {
-        animator.SetBool("AttackLeft", false);
-        animator.SetBool("AttackUp", false);
-        animator.SetBool("AttackRight", false);
+        //animator.SetBool("AttackLeft", false);
+        //animator.SetBool("AttackUp", false);
+        //animator.SetBool("AttackRight", false);
     }
 
     void Update()

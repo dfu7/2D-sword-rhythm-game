@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 
 
@@ -26,6 +28,8 @@ public class PlayerControls : MonoBehaviour
 
     public List<Lane> Lanes;
 
+    private float timer = 0;
+    private bool runTimer = false;
 
     private void Start()
     {
@@ -45,6 +49,10 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (runTimer)
+        {
+            timer += Time.deltaTime;
+        }
         /*
         foreach (Lane lane in Lanes)
         {
@@ -85,59 +93,142 @@ public class PlayerControls : MonoBehaviour
         
     }
 
-    void OnLeftSwing()
+    public void OnLeftSwing(InputAction.CallbackContext context)
     {
-        hitDir?.Invoke("Left");
-        animator.SetBool("AttackLeft", true);
-        
-        if (Lanes[0].Monsters.Count == 0)
+        if (context.interaction is TapInteraction)
         {
-            Debug.Log("Miss");
-            hitAcc?.Invoke("Miss");
-            return;
+            if (context.started)
+            {
+                hitDir?.Invoke("Left");
+                animator.SetBool("AttackLeft", true);
+            }
+            if (context.performed)
+            {
+                if (Lanes[0].Monsters.Count > 0)
+                {
+                    float d = Vector3.Distance(Lanes[0].RingPoint.position, Lanes[0].Monsters.Peek().transform.Find("target").position);
+                    Debug.Log("left swing: " + d);
+                    CheckDistance(d, 0);
+                }
+
+                Debug.Log("Miss");
+                hitAcc?.Invoke("Miss");
+                animator.SetBool("AttackLeft", false);
+            }
+            if (context.canceled)
+            {
+                animator.SetBool("LongAttack", true);
+                animator.SetBool("AttackLeft", false);
+            }
         }
-
-        float d = Vector3.Distance(Lanes[0].RingPoint.position, Lanes[0].Monsters.Peek().transform.Find("target").position);
-        Debug.Log("left swing: " + d);
-        CheckDistance(d, 0);
-
-        
+        else if (context.interaction is PressInteraction)
+        {
+            if (context.started)
+            {
+                Debug.LogWarning("started pressing");
+                runTimer = true;
+            }
+            if (context.canceled)
+            {
+                Debug.LogWarning("canceled pressing");
+                animator.SetBool("LongAttack", false);
+                runTimer = false;
+                Debug.LogWarning(timer);
+                timer = 0;
+            }
+        }
     }
 
-    void OnRightSwing()
+    public void OnRightSwing(InputAction.CallbackContext context)
     {
-        hitDir?.Invoke("Right");
-        animator.SetBool("AttackRight", true);
-
-        if (Lanes[2].Monsters.Count == 0)
+        if (context.interaction is TapInteraction)
         {
-            Debug.Log("Miss");
-            hitAcc?.Invoke("Miss");
-            return;
+            if (context.started)
+            {
+                hitDir?.Invoke("Right");
+                animator.SetBool("AttackRight", true);
+            }
+            if (context.performed)
+            {
+                if (Lanes[2].Monsters.Count > 0)
+                {
+                    float d = Vector3.Distance(Lanes[2].RingPoint.position, Lanes[2].Monsters.Peek().transform.Find("target").position);
+                    Debug.Log("right swing: " + d);
+                    CheckDistance(d, 2);
+                }
+
+                Debug.Log("Miss");
+                hitAcc?.Invoke("Miss");
+                animator.SetBool("AttackRight", false);
+            }
+            if (context.canceled)
+            {
+                animator.SetBool("LongAttack", true);
+                animator.SetBool("AttackRight", false);
+            }
         }
-
-        float d = Vector3.Distance(Lanes[2].RingPoint.position, Lanes[2].Monsters.Peek().transform.Find("target").position);
-        Debug.Log("right swing: " + d);
-
-        CheckDistance(d, 2);
+        else if (context.interaction is PressInteraction)
+        {
+            if (context.started)
+            {
+                Debug.LogWarning("started pressing");
+                runTimer = true;
+            }
+            if (context.canceled)
+            {
+                Debug.LogWarning("canceled pressing");
+                animator.SetBool("LongAttack", false);
+                runTimer = false;
+                Debug.LogWarning(timer);
+                timer = 0;
+            }
+        }
     }
 
-    void OnUpSwing()
+    public void OnUpSwing(InputAction.CallbackContext context)
     {
-        hitDir?.Invoke("Up");
-        animator.SetBool("AttackUp", true);
-
-        if (Lanes[1].Monsters.Count == 0)
+        if (context.interaction is TapInteraction)
         {
-            Debug.Log("Miss");
-            hitAcc?.Invoke("Miss");
-            return;
+            if (context.started)
+            {
+                hitDir?.Invoke("Up");
+                animator.SetBool("AttackUp", true);
+            }
+            if (context.performed)
+            {
+                if (Lanes[1].Monsters.Count > 0)
+                {
+                    float d = Vector3.Distance(Lanes[1].RingPoint.position, Lanes[1].Monsters.Peek().transform.Find("target").position);
+                    Debug.Log("center swing: " + d);
+                    CheckDistance(d, 1);
+                }
+
+                Debug.Log("Miss");
+                hitAcc?.Invoke("Miss");
+                animator.SetBool("AttackUp", false);
+            }
+            if (context.canceled)
+            {
+                animator.SetBool("LongAttack", true);
+                animator.SetBool("AttackUp", false);
+            }
         }
-
-        float d = Vector3.Distance(Lanes[1].RingPoint.position, Lanes[1].Monsters.Peek().transform.Find("target").position);
-        Debug.Log("center swing: " + d);
-
-        CheckDistance(d, 1);
+        else if (context.interaction is PressInteraction)
+        {
+            if (context.started)
+            {
+                Debug.LogWarning("started pressing");
+                runTimer = true;
+            }
+            if (context.canceled)
+            {
+                Debug.LogWarning("canceled pressing");
+                animator.SetBool("LongAttack", false);
+                runTimer = false;
+                Debug.LogWarning(timer);
+                timer = 0;
+            }
+        }
     }
 
     void CheckDistance(float distance, int lane)
@@ -167,7 +258,7 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    void OnHoldingEscape()
+    public void OnHoldingEscape(InputAction.CallbackContext context)
     {
         SceneManager.LoadScene("Start");
         Debug.Log("Go back to start menu");
