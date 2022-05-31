@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fin.unity
     guid: a6a4283a012b1d147ac95c6407c61f5a
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: caadedb8a5be7ec4690f2cbb41f617e1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e01fe146276383344ad6ec7434ebe6fd, type: 2}

@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
+    public bool canFail = true;
+
     public int score = 0;
     public int combo = 0;
     public int failCombo = 0;
@@ -49,7 +51,7 @@ public class ScoreManager : MonoBehaviour
             score -= missPointLoss;
         }
 
-        if (failCombo >= failThreshold)
+        if (canFail && failCombo >= failThreshold)
         {
             SceneManager.LoadScene("Lose");
         }

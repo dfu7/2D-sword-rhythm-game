@@ -999,6 +999,132 @@ MonoBehaviour:
   - spawnBeat: 169
     laneIndex: 1
     monsterIndex: 0
+  - spawnBeat: 171
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 173
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 173.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 177
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 177.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 181
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 181.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 185
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 187
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 189
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 189.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 193
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 193.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 197
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 197.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 201
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 209
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 217
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 225
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 233
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 233.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 237
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 237.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 241
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 241.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 245
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 245.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 249
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 249.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 253
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 253.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 257
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 257.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 261
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 261.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 261.66
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 262.33
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 263
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 263.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 264.33
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 265
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 265.5
+    laneIndex: 0
+    monsterIndex: 0
 --- !u!4 &464065059
 Transform:
   m_ObjectHideFlags: 0
@@ -2178,11 +2304,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd88083e1e6755f4c989ee73ab0ddee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canFail: 0
   score: 0
   combo: 0
+  failCombo: 0
+  failThreshold: 10
   comboStart: 2
   almostPoints: 500
   perfectPoints: 1000
+  missPointLoss: 500
+  failPointLoss: 1000
   scoreText: {fileID: 1920224999}
   comboText: {fileID: 1227340048}
   audioSource: {fileID: 1877944026}
