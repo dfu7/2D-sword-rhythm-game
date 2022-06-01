@@ -70,7 +70,7 @@ public class ScoreManager : MonoBehaviour
 
             if (combo >= comboStart)
             {
-                pointMultiplier += 0.1f;
+                pointMultiplier += 1f;
                 extraPoints = pointMultiplier * 10;
             }
 

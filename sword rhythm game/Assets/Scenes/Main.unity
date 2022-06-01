@@ -1195,25 +1195,109 @@ MonoBehaviour:
     laneIndex: 0
     monsterIndex: 0
   - spawnBeat: 293
-    laneIndex: 1
-    monsterIndex: 0
-  - spawnBeat: 296
-    laneIndex: 1
-    monsterIndex: 0
-  - spawnBeat: 296.5
-    laneIndex: 1
+    laneIndex: 0
     monsterIndex: 0
   - spawnBeat: 297
-    laneIndex: 1
+    laneIndex: 2
     monsterIndex: 0
   - spawnBeat: 297
-    laneIndex: 1
+    laneIndex: 0
     monsterIndex: 0
   - spawnBeat: 297.5
-    laneIndex: 1
+    laneIndex: 0
     monsterIndex: 0
   - spawnBeat: 297.66
     laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 298.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 299
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 299.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 300.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 301
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 301
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 301.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 301.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 302.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 303
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 303.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 304
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 305
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 305
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 305.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 305.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 306.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 307
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 307.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 308.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 309
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 309
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 309.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 309.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 310.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 311
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 311.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 312
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 313
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 313.5
+    laneIndex: 0
     monsterIndex: 0
 --- !u!4 &464065059
 Transform:
