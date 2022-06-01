@@ -23,13 +23,15 @@ public class PlayerControls : MonoBehaviour
     {
         public Transform SpawnPoint;
         public Transform RingPoint;
+        public Transform finalDestination;
         public Queue<Monster> Monsters;
     }
 
     public List<Lane> Lanes;
 
-    private float timer = 0;
-    private bool runTimer = false;
+    bool[] headsHit = { false, false, false };
+
+    public GameObject finalDestination;
 
     private void Start()
     {
@@ -45,14 +47,9 @@ public class PlayerControls : MonoBehaviour
             lane.Monsters = new Queue<Monster>();
         }
     }
+
     void Update()
     {
-        if (runTimer)
-        {
-            timer += Time.deltaTime;
-            Debug.LogWarning(timer);
-        }
-
         foreach (Lane lane in Lanes)
         {
             if (lane.Monsters.Count > 0)
@@ -63,16 +60,23 @@ public class PlayerControls : MonoBehaviour
                     {
                         Destroy(lane.Monsters.Dequeue().gameObject);
                         hitAcc?.Invoke("Fail");
-
                     }
                         
                 }
 
                 foreach (Monster monster in lane.Monsters)
                 {
-                    if (Vector3.Distance(monster.targetPosition.transform.position, monster.transform.position) <= 0)
+                    if (Vector3.Distance(lane.RingPoint.transform.position, monster.transform.position) <= 0)
                     {
                         monster.targetPosition = monster.swordsmanT.transform;
+                    }
+                    else if (Vector3.Distance(monster.swordsmanT.transform.position, monster.transform.position) <= 0)
+                    {
+                        if(lane.Monsters.Peek().gameObject.tag == "Dragon")
+                        {
+                            monster.targetPosition = lane.finalDestination.transform;
+                        }
+                        // and dragon, set new travel point
                     }
                 }
             }
@@ -91,9 +95,8 @@ public class PlayerControls : MonoBehaviour
                 hitDir?.Invoke(hitDirName);
                 animator.SetBool(animBoolName, true);
 
-                if (Lanes[lane].Monsters.Count > 0)
+                if (Lanes[lane].Monsters.Count > 0 && !headsHit[lane])
                 {
-                    CheckForDragon(lane);
                     float d = Vector3.Distance(Lanes[lane].RingPoint.position, Lanes[lane].Monsters.Peek().transform.Find("target").position);
                     Debug.Log(animBoolName + ": " + d);
                     CheckDistance(d, lane);
@@ -108,7 +111,6 @@ public class PlayerControls : MonoBehaviour
             {
                 Debug.LogWarning("tap performed");
                 animator.SetBool(animBoolName, false);
-                EndTimer();
             }
             if (context.canceled)
             {
@@ -120,14 +122,13 @@ public class PlayerControls : MonoBehaviour
         {
             if (context.canceled)
             {
-
-                animator.SetBool("LongAttack", false);
-                if (timer >= 2.0f)
+                if (headsHit[lane])
                 {
-                    Debug.LogError("Press Performed");
-                    Destroy(Lanes[lane].Monsters.Dequeue().gameObject);
+                    float d = Vector3.Distance(Lanes[lane].RingPoint.position, Lanes[lane].Monsters.Peek().transform.Find("tail end").position);
+                    Debug.LogWarning(d);
+                    CheckDistance(d, lane);
                 }
-                EndTimer();
+                animator.SetBool("LongAttack", false);
             }
         }
     }
@@ -147,24 +148,6 @@ public class PlayerControls : MonoBehaviour
 
     void CheckDistance(float distance, int lane)
     {
-        if (Lanes[lane].Monsters.Peek().gameObject.tag == "Dragon")
-        {
-            runTimer = true;
-            //distance between ring and head is within almost range 
-            //start dragon hold timer
-            if (distance <= 0.3)
-            {
-                Debug.Log("Perfect");
-                hitAcc?.Invoke("Perfect");
-            }
-            // almost
-            else if (distance > 0.3 && distance <= 0.8)
-            {
-                Debug.Log("Almost");
-                hitAcc?.Invoke("Almost");
-            }
-        }
-
         // miss
         if (distance > 0.8)
         {
@@ -185,11 +168,21 @@ public class PlayerControls : MonoBehaviour
                 Debug.Log("Almost");
                 hitAcc?.Invoke("Almost");
             }
-            if (Lanes[lane].Monsters.Peek().gameObject.tag != "Dragon")
+
+            if (Lanes[lane].Monsters.Peek().gameObject.tag == "Dragon")
             {
-                Destroy(Lanes[lane].Monsters.Dequeue().gameObject);
+                if (headsHit[lane])
+                {
+                    headsHit[lane] = false;
+                }
+                else if (!headsHit[lane])
+                {
+                    headsHit[lane] = true;
+                    return;
+                }
             }
-               
+
+            Destroy(Lanes[lane].Monsters.Dequeue().gameObject);
         }
     }
 
@@ -199,22 +192,4 @@ public class PlayerControls : MonoBehaviour
         SceneManager.LoadScene("Start");
         Debug.Log("Go back to start menu");
     }
-    void CheckForDragon(int lane)
-    {
-        if (Lanes[lane].Monsters.Peek().gameObject.tag == "Dragon")
-        {
-            return;
-        }
-    }
-    void EndTimer()
-    {
-        if (runTimer)
-        {
-            Debug.LogWarning(timer);
-            runTimer = false;
-            timer = 0;
-        }
-    }
-
- 
 }

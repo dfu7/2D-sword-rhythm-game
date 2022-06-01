@@ -17,6 +17,8 @@ public class Monster : MonoBehaviour
     public ParticleSystem pSplatter;
     public GameObject inkSplatter;
 
+    private Transform recRingPoint;
+
     private void OnEnable()
     {
         PlayerControls.hitAcc += CreateInk;
@@ -46,12 +48,13 @@ public class Monster : MonoBehaviour
     private void Start()
     {
         startPosition = transform.position;
+        recRingPoint = targetPosition;
         spawnBeat = m_conductor.songPositionInBeats;
     }
 
     void Update()
     {
-        if (targetPosition.transform == swordsmanT.transform)
+        if (targetPosition.transform != recRingPoint)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, Time.deltaTime * speed);
         }
