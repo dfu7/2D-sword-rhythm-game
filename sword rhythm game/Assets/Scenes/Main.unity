@@ -1294,9 +1294,498 @@ MonoBehaviour:
     laneIndex: 1
     monsterIndex: 0
   - spawnBeat: 313
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 313
     laneIndex: 0
     monsterIndex: 0
   - spawnBeat: 313.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 313.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 314.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 315
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 315.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 316.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 317
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 317
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 317.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 317.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 318.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 319
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 319.66
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 320.33
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 321
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 321
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 321.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 321.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 322.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 323
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 323.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 324.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 325
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 325
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 325.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 325.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 326.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 327
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 327.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 328
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 329
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 329
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 329.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 330.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 331
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 331.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 332.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 333
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 333
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 333.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 334.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 335
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 335.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 336
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 336.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 337
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 337
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 337.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 338.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 339
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 339.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 340.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 341
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 341
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 341.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 342.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 343
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 343.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 344
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 344.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 345
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 345
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 345.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 346.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 347
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 347.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 348.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 349
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 349
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 349.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 350.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 351
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 351.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 352
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 352.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 353
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 353
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 353.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 354.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 355
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 355.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 356.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 357
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 357
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 357.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 358.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 359
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 359.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 360
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 360.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 361
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 361
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 361.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 361.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 362.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 363
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 363.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 364.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 365
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 365
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 365.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 365.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 366.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 367
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 367.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 368
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 368.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 369
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 369.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 369.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 370.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 371
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 371.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 372.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 373
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 373
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 373.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 373.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 374.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 375
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 375.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 376
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 376.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 377
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 377
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 377.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 377.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 378.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 379
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 379.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 380.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 381
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 381
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 381.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 381.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 382.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 383
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 383.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 384
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 384.5
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 385
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 385.5
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 385.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 386.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 387
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 387.66
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 388.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 389
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 389
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 389.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 389.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 390.33
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 391
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 391.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 392
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 392.5
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 393
+    laneIndex: 0
+    monsterIndex: 0
+  - spawnBeat: 397
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 398
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 401
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 404.33
+    laneIndex: 2
+    monsterIndex: 0
+  - spawnBeat: 404.66
+    laneIndex: 1
+    monsterIndex: 0
+  - spawnBeat: 405
     laneIndex: 0
     monsterIndex: 0
 --- !u!4 &464065059
