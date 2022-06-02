@@ -73,6 +73,10 @@ public class PlayerControls : MonoBehaviour
 
                 if (Vector3.Distance(lane.Monsters.Peek().transform.position, lane.Monsters.Peek().targetPosition.position) <= 0)
                 {
+                    if (lane.Monsters.Peek().gameObject.tag == "Dragon")
+                    {
+                        headsHit[Lanes.IndexOf(lane)] = false;
+                    }
                     Destroy(lane.Monsters.Dequeue().gameObject);
                     hitAcc?.Invoke("Fail");
                 }
@@ -122,6 +126,8 @@ public class PlayerControls : MonoBehaviour
             {
                 if (headsHit[lane])
                 {
+                    Debug.LogWarning(Lanes[lane].RingPoint.position);
+                    Debug.LogWarning(Lanes[lane].Monsters.Peek().transform.Find("tail end").position);
                     float d = Vector3.Distance(Lanes[lane].RingPoint.position, Lanes[lane].Monsters.Peek().transform.Find("tail end").position);
                     Debug.LogWarning(d);
                     CheckDistance(d, lane);
