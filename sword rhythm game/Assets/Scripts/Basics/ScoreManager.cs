@@ -97,7 +97,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerPrefs.DeleteAll();   
     }
 
     // Update is called once per frame
@@ -106,6 +106,8 @@ public class ScoreManager : MonoBehaviour
         if (!audioSource.isPlaying)
         {
             //Null check queue 
+            PlayerPrefs.SetInt("TotalScore", score);
+            //PlayerPrefs.SetInt("TotalCombo", combo);
 
             SceneManager.LoadScene("Fin");
         }
