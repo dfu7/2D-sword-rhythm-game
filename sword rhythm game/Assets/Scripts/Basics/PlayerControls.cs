@@ -124,10 +124,10 @@ public class PlayerControls : MonoBehaviour
         {
             if (context.canceled)
             {
+                Debug.LogWarning("in context.canceled");
                 if (headsHit[lane])
                 {
-                    Debug.LogWarning(Lanes[lane].RingPoint.position);
-                    Debug.LogWarning(Lanes[lane].Monsters.Peek().transform.Find("tail end").position);
+                    Debug.LogWarning("in headsHit[lane]");
                     float d = Vector3.Distance(Lanes[lane].RingPoint.position, Lanes[lane].Monsters.Peek().transform.Find("tail end").position);
                     Debug.LogWarning(d);
                     CheckDistance(d, lane);
@@ -152,8 +152,9 @@ public class PlayerControls : MonoBehaviour
 
     void CheckDistance(float distance, int lane)
     {
+        Debug.Log(lane);
         // miss
-        if (distance > 0.8)
+        if (distance > 0.8 && Lanes[lane].Monsters.Peek().gameObject.tag != "Dragon")
         {
             //Debug.Log("Miss");
             hitAcc?.Invoke("Miss");
@@ -166,6 +167,11 @@ public class PlayerControls : MonoBehaviour
                 Debug.Log("Perfect");
                 hitAcc?.Invoke("Perfect");
             }
+            else if (Lanes[lane].Monsters.Peek().gameObject.tag == "Dragon" && distance <= 2.5)
+            {
+                Debug.Log("Perfect");
+                hitAcc?.Invoke("Perfect");
+            }
             // almost
             else if (distance > 0.3 && distance <= 0.8)
             {
@@ -173,14 +179,18 @@ public class PlayerControls : MonoBehaviour
                 hitAcc?.Invoke("Almost");
             }
 
+            Debug.LogWarning("TAG: " + Lanes[lane].Monsters.Peek().gameObject.tag);
             if (Lanes[lane].Monsters.Peek().gameObject.tag == "Dragon")
             {
+                Debug.LogWarning("in dragon part dist check");
                 if (headsHit[lane])
                 {
+                    Debug.LogWarning("heads hit to false");
                     headsHit[lane] = false;
                 }
                 else if (!headsHit[lane])
                 {
+                    Debug.LogWarning("heads hit to TRUE");
                     headsHit[lane] = true;
                     return;
                 }
