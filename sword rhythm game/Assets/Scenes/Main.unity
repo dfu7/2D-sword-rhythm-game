@@ -608,7 +608,7 @@ MonoBehaviour:
   spawns:
   - spawnBeat: 9
     laneIndex: 0
-    monsterIndex: 0
+    monsterIndex: 2
   - spawnBeat: 15.25
     laneIndex: 2
     monsterIndex: 0
@@ -2624,7 +2624,7 @@ AudioSource:
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 160
@@ -2867,7 +2867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0747ce4d7eb826646915fc482db12549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songBpm: 110.5
+  songBpm: 110
   secPerBeat: 0
   songPosition: 0
   songPositionInBeats: 0
