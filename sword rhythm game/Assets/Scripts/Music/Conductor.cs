@@ -25,6 +25,9 @@ public class Conductor : MonoBehaviour
 
     [SerializeField] private List<SpawnPackage> spawns;
 
+    public float tempo2 = 110.5f;
+    private bool tempo2switched = false;
+
     void Start()
     {
         //Load the AudioSource attached to the Conductor GameObject
@@ -61,5 +64,11 @@ public class Conductor : MonoBehaviour
         }
 
         #endregion
+
+        if (songPositionInBeats >= 103 && !tempo2switched)
+        {
+            songBpm = tempo2;
+            tempo2switched = true;
+        }
     }
 }

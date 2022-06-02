@@ -89,7 +89,7 @@ public class PlayerControls : MonoBehaviour
         {
             if (context.started)
             {
-                // audioSource.Play();
+                audioSource.PlayOneShot(drum);
                 hitDir?.Invoke(hitDirName);
                 animator.SetBool(animBoolName, true);
 

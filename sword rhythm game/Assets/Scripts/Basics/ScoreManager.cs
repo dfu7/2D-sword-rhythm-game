@@ -105,6 +105,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (!audioSource.isPlaying)
         {
+            //Null check queue 
 
             SceneManager.LoadScene("Fin");
         }

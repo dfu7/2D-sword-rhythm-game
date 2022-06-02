@@ -2624,10 +2624,10 @@ AudioSource:
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 160
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2867,7 +2867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0747ce4d7eb826646915fc482db12549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songBpm: 110
+  songBpm: 110.5
   secPerBeat: 0
   songPosition: 0
   songPositionInBeats: 0
