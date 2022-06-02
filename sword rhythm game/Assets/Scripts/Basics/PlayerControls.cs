@@ -31,6 +31,9 @@ public class PlayerControls : MonoBehaviour
 
     bool[] headsHit = { false, false, false };
 
+    public AudioSource audioSource;
+    public AudioClip drum;
+
     private void Start()
     {
 
@@ -86,18 +89,19 @@ public class PlayerControls : MonoBehaviour
         {
             if (context.started)
             {
+                // audioSource.Play();
                 hitDir?.Invoke(hitDirName);
                 animator.SetBool(animBoolName, true);
 
                 if (Lanes[lane].Monsters.Count > 0 && !headsHit[lane])
                 {
                     float d = Vector3.Distance(Lanes[lane].RingPoint.position, Lanes[lane].Monsters.Peek().transform.Find("target").position);
-                    Debug.Log(animBoolName + ": " + d);
+                    //Debug.Log(animBoolName + ": " + d);
                     CheckDistance(d, lane);
                 }
                 else
                 {
-                    Debug.Log("Miss");
+                    //Debug.Log("Miss");
                     hitAcc?.Invoke("Miss");
                 }
             }
@@ -145,7 +149,7 @@ public class PlayerControls : MonoBehaviour
         // miss
         if (distance > 0.8)
         {
-            Debug.Log("Miss");
+            //Debug.Log("Miss");
             hitAcc?.Invoke("Miss");
         }
         else
@@ -184,6 +188,6 @@ public class PlayerControls : MonoBehaviour
     public void OnHoldingEscape(InputAction.CallbackContext context)
     {
         SceneManager.LoadScene("Start");
-        Debug.Log("Go back to start menu");
+        //Debug.Log("Go back to start menu");
     }
 }

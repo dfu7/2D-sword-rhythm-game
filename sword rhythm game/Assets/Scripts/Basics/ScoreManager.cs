@@ -39,7 +39,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (hitAcc == "Fail")
         {
-            Debug.LogWarning("F");
+            //Debug.LogWarning("F");
             ResetCombo();
             score -= failPointLoss;
             failCombo += 1;

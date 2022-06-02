@@ -11,6 +11,7 @@ public class Monster : MonoBehaviour
     public float spawnBeat;
     public float travelTimeInBeats = 4;
     public float speed = 0.1f;
+    private Transform target;
 
     private Conductor m_conductor;
 
@@ -50,6 +51,7 @@ public class Monster : MonoBehaviour
         startPosition = transform.position;
         recRingPoint = targetPosition;
         spawnBeat = m_conductor.songPositionInBeats;
+        target = transform.Find("target");
     }
 
     void Update()
@@ -57,10 +59,12 @@ public class Monster : MonoBehaviour
         if (targetPosition.transform != recRingPoint)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, Time.deltaTime * speed);
+            target.position = Vector3.MoveTowards(transform.position, targetPosition.position, Time.deltaTime * speed);
         }
         else
         {
             transform.position = Vector3.Lerp(startPosition, targetPosition.position, Mathf.Clamp01((m_conductor.songPositionInBeats - spawnBeat - beatsToWait) / travelTimeInBeats));
+            target.position = Vector3.Lerp(startPosition, targetPosition.position, Mathf.Clamp01((m_conductor.songPositionInBeats - spawnBeat - beatsToWait) / travelTimeInBeats));
         }
     }
 
