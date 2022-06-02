@@ -31,8 +31,6 @@ public class PlayerControls : MonoBehaviour
 
     bool[] headsHit = { false, false, false };
 
-    public GameObject finalDestination;
-
     private void Start()
     {
 
@@ -54,16 +52,6 @@ public class PlayerControls : MonoBehaviour
         {
             if (lane.Monsters.Count > 0)
             {
-                if (Vector3.Distance(lane.Monsters.Peek().transform.position, lane.Monsters.Peek().swordsmanT.transform.position) <= 0)
-                {
-                    if (lane.Monsters.Peek().gameObject.tag != "Dragon")
-                    {
-                        Destroy(lane.Monsters.Dequeue().gameObject);
-                        hitAcc?.Invoke("Fail");
-                    }
-                        
-                }
-
                 foreach (Monster monster in lane.Monsters)
                 {
                     if (Vector3.Distance(lane.RingPoint.transform.position, monster.transform.position) <= 0)
@@ -72,12 +60,18 @@ public class PlayerControls : MonoBehaviour
                     }
                     else if (Vector3.Distance(monster.swordsmanT.transform.position, monster.transform.position) <= 0)
                     {
-                        if(lane.Monsters.Peek().gameObject.tag == "Dragon")
+                        if (lane.Monsters.Peek().gameObject.tag == "Dragon")
                         {
                             monster.targetPosition = lane.finalDestination.transform;
                         }
                         // and dragon, set new travel point
                     }
+                }
+
+                if (Vector3.Distance(lane.Monsters.Peek().transform.position, lane.Monsters.Peek().targetPosition.position) <= 0)
+                {
+                    Destroy(lane.Monsters.Dequeue().gameObject);
+                    hitAcc?.Invoke("Fail");
                 }
             }
 
@@ -109,7 +103,7 @@ public class PlayerControls : MonoBehaviour
             }
             if (context.performed)
             {
-                Debug.LogWarning("tap performed");
+                //Debug.LogWarning("tap performed");
                 animator.SetBool(animBoolName, false);
             }
             if (context.canceled)
