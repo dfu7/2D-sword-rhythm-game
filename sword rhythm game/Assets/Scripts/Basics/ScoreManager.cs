@@ -83,7 +83,7 @@ public class ScoreManager : MonoBehaviour
             score = 0;
         }
 
-        scoreText.SetText(score.ToString() + " pts");
+        scoreText.SetText(score.ToString() /*+ " pts"*/);
         comboText.SetText(/*"Combo: " + */combo.ToString());
     }
 
