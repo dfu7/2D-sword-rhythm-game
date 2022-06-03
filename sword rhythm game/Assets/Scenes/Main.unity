@@ -683,10 +683,10 @@ MonoBehaviour:
   spawns:
   - spawnBeat: 11
     laneIndex: 0
-    monsterIndex: 2
+    monsterIndex: 0
   - spawnBeat: 15.25
     laneIndex: 2
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 32.25
     laneIndex: 1
     monsterIndex: 0
@@ -761,16 +761,16 @@ MonoBehaviour:
     monsterIndex: 0
   - spawnBeat: 81
     laneIndex: 2
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 81.5
     laneIndex: 1
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 85
     laneIndex: 1
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 85.5
     laneIndex: 0
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 89
     laneIndex: 0
     monsterIndex: 0
@@ -782,16 +782,16 @@ MonoBehaviour:
     monsterIndex: 0
   - spawnBeat: 97
     laneIndex: 2
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 97.5
     laneIndex: 1
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 101
     laneIndex: 1
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 101.5
     laneIndex: 0
-    monsterIndex: 0
+    monsterIndex: 1
   - spawnBeat: 103
     laneIndex: 2
     monsterIndex: 0
@@ -1121,16 +1121,16 @@ MonoBehaviour:
     monsterIndex: 0
   - spawnBeat: 201
     laneIndex: 0
-    monsterIndex: 0
+    monsterIndex: 2
   - spawnBeat: 209
     laneIndex: 2
-    monsterIndex: 0
+    monsterIndex: 2
   - spawnBeat: 217
     laneIndex: 1
-    monsterIndex: 0
+    monsterIndex: 2
   - spawnBeat: 225
     laneIndex: 0
-    monsterIndex: 0
+    monsterIndex: 2
   - spawnBeat: 233
     laneIndex: 0
     monsterIndex: 0

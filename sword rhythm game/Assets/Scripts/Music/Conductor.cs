@@ -60,7 +60,7 @@ public class Conductor : MonoBehaviour
         songPositionInBeats = songPosition / secPerBeat;
         if (prevBeat != Mathf.RoundToInt(songPositionInBeats))
         {
-            //Debug.Log(Mathf.RoundToInt(songPositionInBeats));
+            Debug.Log(Mathf.RoundToInt(songPositionInBeats));
         }
 
         #endregion
