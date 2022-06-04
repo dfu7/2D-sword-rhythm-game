@@ -14,6 +14,10 @@ public class finalScoreSetter : MonoBehaviour
         int finalScore = PlayerPrefs.GetInt("TotalScore");
         scoreText.SetText(finalScore.ToString());
 
+        if(finalScore >= 1000000)
+        {
+            letterGrade.SetText("RIZUDO");
+        }
         if(finalScore >= 300000)
         {
             letterGrade.SetText("S+");
@@ -33,6 +37,10 @@ public class finalScoreSetter : MonoBehaviour
         else if (finalScore >= 50000)
         {
             letterGrade.SetText("C");
+        }
+        else if (finalScore >= 25000)
+        {
+            letterGrade.SetText("D");
         }
         else
         {

@@ -686,7 +686,7 @@ MonoBehaviour:
     monsterIndex: 0
   - spawnBeat: 15.25
     laneIndex: 2
-    monsterIndex: 1
+    monsterIndex: 0
   - spawnBeat: 32.25
     laneIndex: 1
     monsterIndex: 0
